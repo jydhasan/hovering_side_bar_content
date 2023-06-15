@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="script.js"></script> -->
+    <style>
+        .container {
+            display: flex;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 30%;
+            height: 100vh;
+            background-color: #f1f1f1;
+        }
+
+        .sidebar-content {
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        .sidebar-content ul {
+            padding: 0;
+        }
+
+        .sidebar-content li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar-content a {
+            text-decoration: none;
+            color: #000;
+            display: block;
+            padding: 10px;
+        }
+
+        /* hovering  sidebar optionally */
+        .sidebar-content a:hover {
+            background-color: red;
+            color: #fff;
+        }
+
+        .sidebar-content a.selected {
+            background-color: red;
+            color: #fff;
+        }
+
+        .content {
+            width: 70%;
+            margin-left: 30%;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        section h2 {
+            margin-bottom: 10px;
+        }
+
+    </style>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const sidebarLinks = document.querySelectorAll('.sidebar-content a');
+            const sections = document.querySelectorAll('section');
+
+            window.addEventListener('scroll', () => {
+                let currentSection = '';
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+
+                    if (window.pageYOffset >= sectionTop - sectionHeight / 2) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+
+                sidebarLinks.forEach(link => {
+                    link.classList.remove('selected');
+                    if (link.getAttribute('href').slice(1) === currentSection) {
+                        link.classList.add('selected');
+                    }
+                });
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidebar-content">
+                <ul>
+                    <li><a href="#section1">Heading 1</a></li>
+                    <li><a href="#section2">Heading 2</a></li>
+                    <li><a href="#section3">Heading 3</a></li>
+                    <li><a href="#section1">Heading 1</a></li>
+                    <li><a href="#section2">Heading 2</a></li>
+                    <li><a href="#section3">Heading 3</a></li>
+                    <li><a href="#section1">Heading 1</a></li>
+                    <li><a href="#section2">Heading 2</a></li>
+                    <li><a href="#section3">Heading 3</a></li>
+                    <li><a href="#section1">Heading 1</a></li>
+                    <li><a href="#section2">Heading 2</a></li>
+                    <li><a href="#section3">Heading 3</a></li>
+                    <li><a href="#section1">Heading 1</a></li>
+                    <li><a href="#section2">Heading 2</a></li>
+                    <li><a href="#section3">Heading 3</a></li>
+                    <li><a href="#section1">Heading 1</a></li>
+                    <li><a href="#section2">Heading 2</a></li>
+                    <li><a href="#section3">Heading 3</a></li>
+                    <li><a href="#section1">Heading 1</a></li>
+                    <li><a href="#section2">Heading 2</a></li>
+                    <li><a href="#section3">Heading 3</a></li>
+                    <li><a href="#section1">Heading 1</a></li>
+                    <li><a href="#section2">Heading 2</a></li>
+                    <li><a href="#section3">Heading 3</a></li>
+                    <li><a href="#section1">Heading 1</a></li>
+                    <li><a href="#section2">Heading 2</a></li>
+                    <li><a href="#section3">Heading 3</a></li>
+                    <li><a href="#section1">Heading 1</a></li>
+                    <li><a href="#section2">Heading 2</a></li>
+                    <li><a href="#section3">Heading 3</a></li>
+                    <li><a href="#section1">Heading 1</a></li>
+                    <li><a href="#section2">Heading 2</a></li>
+                    <li><a href="#section3">Heading 3</a></li>
+                    <li><a href="#section1">Heading 1</a></li>
+                    <li><a href="#section2">Heading 2</a></li>
+                    <li><a href="#section3">Heading 3</a></li>
+                    <li><a href="#section1">Heading 1</a></li>
+                    <li><a href="#section2">Heading 2</a></li>
+                    <li><a href="#section3">Heading 3</a></li>
+                    <li><a href="#section1">Heading 1</a></li>
+                    <li><a href="#section2">Heading 2</a></li>
+                    <li><a href="#section3">Heading 3</a></li>
+                    <li><a href="#section1">Heading 1</a></li>
+                    <li><a href="#section2">Heading 2</a></li>
+                    <li><a href="#section3">Heading 3</a></li>
+                    <li><a href="#section1">Heading 1</a></li>
+                    <li><a href="#section2">Heading 2</a></li>
+                    <li><a href="#section3">Heading 3</a></li>
+                    <li><a href="#section1">Heading 1</a></li>
+                    <li><a href="#section2">Heading 2</a></li>
+                    <li><a href="#section3">Heading 3</a></li>
+                    <li><a href="#section1">Heading 1</a></li>
+                    <li><a href="#section2">Heading 2</a></li>
+                    <li><a href="#section3">Heading 3</a></li>
+                    <li><a href="#section1">Heading 1</a></li>
+                    <li><a href="#section2">Heading 2</a></li>
+                    <li><a href="#section3">Heading 3</a></li>
+                    <li><a href="#section1">Heading 1</a></li>
+                    <li><a href="#section2">Heading 2</a></li>
+                    <li><a href="#section3">Heading 3</a></li>
+                    <li><a href="#section1">Heading 1</a></li>
+                    <li><a href="#section2">Heading 2</a></li>
+                    <li><a href="#section3">Heading 3</a></li>
+                    <li><a href="#section1">Heading 1</a></li>
+                    <li><a href="#section2">Heading 2</a></li>
+                    <li><a href="#section3">Heading 3</a></li>
+                    <li><a href="#section1">Heading 1</a></li>
+                    <li><a href="#section2">Heading 2</a></li>
+                    <li><a href="#section3">Heading 3</a></li>
+                    <li><a href="#section1">Heading 1</a></li>
+                    <li><a href="#section2">Heading 2</a></li>
+                    <li><a href="#section3">Heading 3</a></li>
+                    <li><a href="#section1">Heading 1</a></li>
+                    <li><a href="#section2">Heading 2</a></li>
+                    <li><a href="#section3">Heading 3</a></li>
+                    <li><a href="#section1">Heading 1</a></li>
+                    <li><a href="#section2">Heading 2</a></li>
+                    <li><a href="#section3">Heading 3</a></li>
+                    <li><a href="#section1">Heading 1</a></li>
+                    <li><a href="#section2">Heading 2</a></li>
+                    <li><a href="#section3">Heading 3</a></li>
+                    <li><a href="#section1">Heading 1</a></li>
+                    <li><a href="#section2">Heading 2</a></li>
+                    <li><a href="#section3">Heading 3</a></li>
+                    <li><a href="#section1">Heading 1</a></li>
+                    <li><a href="#section2">Heading 2</a></li>
+                    <li><a href="#section3">Heading 3</a></li>
+                    <li><a href="#section1">Heading 1</a></li>
+                    <li><a href="#section2">Heading 2</a></li>
+                    <li><a href="#section3">Heading 3</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <section id="section1">
+                <h2>Heading 1</h2>
+                <p>This is the content for Heading 1.</p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem consequuntur sapiente nisi accusamus?
+                    Minima, dolor? Nobis iusto voluptatem beatae, eaque molestias, esse facilis soluta laboriosam a
+                    ratione molestiae placeat. Animi.
+                    Voluptatibus rem aliquid reprehenderit quaerat quia delectus dolorem necessitatibus! Quas,
+                    accusantium eos. Ea sit deserunt debitis laborum eius, doloremque aperiam magni beatae ratione
+                    repellendus reiciendis sint vel velit nostrum repellat?
+                    Maxime quod cum perspiciatis exercitationem fugiat sed delectus mollitia deleniti possimus? Commodi
+                    repudiandae enim, magni vel id ea nulla laudantium facilis reprehenderit perspiciatis saepe quis!
+                    Nulla necessitatibus consectetur autem illo!
+                    Ex iste ducimus veritatis totam laborum explicabo enim a ipsam mollitia nesciunt recusandae
+                    blanditiis, voluptas deserunt facilis id fuga, vero rem fugiat laboriosam sunt quasi accusantium
+                    perspiciatis? Modi, harum animi.
+                    Ratione totam optio ut voluptatem eaque quasi. Consequuntur vitae corrupti et dolore quaerat quam
+                    cum fugiat deleniti aspernatur minima dolorum modi tempore, illo in hic impedit! Excepturi omnis
+                    pariatur suscipit.
+                    Adipisci nemo incidunt nostrum, ut minus ad, deleniti voluptate vitae doloremque laborum, aperiam
+                    voluptatibus ullam quia laboriosam quaerat! Quos dicta totam earum pariatur quae excepturi tempora
+                    quas voluptate sequi saepe?
+                    Sint quae, impedit sapiente tenetur aliquam nobis, labore omnis asperiores explicabo quisquam
+                    veritatis distinctio cupiditate perspiciatis numquam aspernatur! Odio quo quia commodi eligendi
+                    maiores officiis quis voluptas nostrum, voluptate adipisci.
+                    Nam quibusdam quis quas quasi distinctio aut explicabo, delectus quos repudiandae. Harum rem et
+                    vitae necessitatibus inventore. Similique nemo ea officiis, est placeat nostrum suscipit sequi
+                    eligendi neque obcaecati illo!
+                    Provident sed cum dolores perspiciatis earum magni, repellendus eaque, neque dicta necessitatibus
+                    unde nisi illum ab, labore perferendis! Ex necessitatibus eos voluptates itaque tempora quo vitae et
+                    ducimus incidunt quas!
+                    Vel illo tenetur et voluptates cumque officiis. Totam reiciendis nihil laboriosam aspernatur facilis
+                    repudiandae ipsa commodi magni ducimus est? Labore ipsa repudiandae minima, facere nostrum inventore
+                    ab velit aspernatur vel.
+                    Exercitationem harum accusantium nobis odit! Labore fugit est saepe iusto veniam neque, dignissimos
+                    obcaecati tempore tempora quam, quas vel praesentium asperiores ratione adipisci quibusdam ducimus
+                    porro accusantium velit voluptatum fuga.
+                    Quae assumenda laudantium explicabo nisi eaque distinctio saepe esse molestiae cupiditate tempore
+                    totam repellendus minima ducimus hic tempora asperiores nam corrupti maiores laborum velit molestias
+                    consectetur quidem, deserunt voluptatum. Voluptatibus?
+                    Praesentium quas fuga assumenda ducimus illum quasi maxime, et debitis dignissimos pariatur corporis
+                    numquam totam soluta consequatur amet in sint accusamus deserunt neque. Earum sed vitae modi, fuga
+                    in ipsum!
+                    Quo impedit sapiente qui excepturi odit molestiae laudantium, porro quas error reprehenderit
+                    voluptates consequatur natus quibusdam veniam! Soluta facere cupiditate labore, iure eius minima
+                    possimus perspiciatis enim totam consectetur provident!
+                    Itaque ut corrupti ipsa maxime voluptate nihil placeat architecto corporis aliquam vitae adipisci
+                    reiciendis eius omnis harum, consectetur excepturi soluta a hic vel eaque dicta. Voluptate
+                    exercitationem pariatur expedita. Id.
+                    Possimus aperiam dignissimos dolorum nisi explicabo, ab molestiae placeat ad officia quibusdam
+                    cupiditate quis animi porro, dolor labore tenetur nemo nesciunt culpa blanditiis quaerat excepturi
+                    quisquam delectus magni facilis? Incidunt.
+                    Temporibus soluta dignissimos reiciendis explicabo corrupti, non, vero consequuntur velit labore
+                    dolorem debitis nulla sint dolor quia optio? Accusamus est architecto at sapiente veniam totam modi
+                    blanditiis cumque nesciunt quaerat.
+                    Saepe rerum laborum nulla delectus atque quaerat, architecto maiores excepturi sint cum. Libero
+                    labore ea repellat animi quasi nostrum excepturi facere officia dolore deleniti tempora veritatis
+                    nemo suscipit, distinctio reiciendis?
+                    Cupiditate, quod reiciendis. Exercitationem, dicta nostrum. Hic facilis laboriosam nostrum nam
+                    soluta, illum ad odio voluptas deserunt exercitationem consequuntur accusantium culpa recusandae
+                    quod, debitis numquam quibusdam id optio cum ratione!
+                    Consectetur harum vero pariatur ipsa animi odit laborum fugiat explicabo exercitationem reiciendis
+                    tenetur libero perspiciatis, neque alias sint iure! Consectetur quaerat hic itaque, praesentium aut
+                    cupiditate ab aspernatur. Ex, molestias.
+                </p>
+            </section>
+            <section id="section2">
+                <h2>Heading 2</h2>
+                <p>This is the content for Heading 2.</p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem consequuntur sapiente nisi accusamus?
+                    Minima, dolor? Nobis iusto voluptatem beatae, eaque molestias, esse facilis soluta laboriosam a
+                    ratione molestiae placeat. Animi.
+                    Voluptatibus rem aliquid reprehenderit quaerat quia delectus dolorem necessitatibus! Quas,
+                    accusantium eos. Ea sit deserunt debitis laborum eius, doloremque aperiam magni beatae ratione
+                    repellendus reiciendis sint vel velit nostrum repellat?
+                    Maxime quod cum perspiciatis exercitationem fugiat sed delectus mollitia deleniti possimus? Commodi
+                    repudiandae enim, magni vel id ea nulla laudantium facilis reprehenderit perspiciatis saepe quis!
+                    Nulla necessitatibus consectetur autem illo!
+                    Ex iste ducimus veritatis totam laborum explicabo enim a ipsam mollitia nesciunt recusandae
+                    blanditiis, voluptas deserunt facilis id fuga, vero rem fugiat laboriosam sunt quasi accusantium
+                    perspiciatis? Modi, harum animi.
+                    Ratione totam optio ut voluptatem eaque quasi. Consequuntur vitae corrupti et dolore quaerat quam
+                    cum fugiat deleniti aspernatur minima dolorum modi tempore, illo in hic impedit! Excepturi omnis
+                    pariatur suscipit.
+                    Adipisci nemo incidunt nostrum, ut minus ad, deleniti voluptate vitae doloremque laborum, aperiam
+                    voluptatibus ullam quia laboriosam quaerat! Quos dicta totam earum pariatur quae excepturi tempora
+                    quas voluptate sequi saepe?
+                    Sint quae, impedit sapiente tenetur aliquam nobis, labore omnis asperiores explicabo quisquam
+                    veritatis distinctio cupiditate perspiciatis numquam aspernatur! Odio quo quia commodi eligendi
+                    maiores officiis quis voluptas nostrum, voluptate adipisci.
+                    Nam quibusdam quis quas quasi distinctio aut explicabo, delectus quos repudiandae. Harum rem et
+                    vitae necessitatibus inventore. Similique nemo ea officiis, est placeat nostrum suscipit sequi
+                    eligendi neque obcaecati illo!
+                    Provident sed cum dolores perspiciatis earum magni, repellendus eaque, neque dicta necessitatibus
+                    unde nisi illum ab, labore perferendis! Ex necessitatibus eos voluptates itaque tempora quo vitae et
+                    ducimus incidunt quas!
+                    Vel illo tenetur et voluptates cumque officiis. Totam reiciendis nihil laboriosam aspernatur facilis
+                    repudiandae ipsa commodi magni ducimus est? Labore ipsa repudiandae minima, facere nostrum inventore
+                    ab velit aspernatur vel.
+                    Exercitationem harum accusantium nobis odit! Labore fugit est saepe iusto veniam neque, dignissimos
+                    obcaecati tempore tempora quam, quas vel praesentium asperiores ratione adipisci quibusdam ducimus
+                    porro accusantium velit voluptatum fuga.
+                    Quae assumenda laudantium explicabo nisi eaque distinctio saepe esse molestiae cupiditate tempore
+                    totam repellendus minima ducimus hic tempora asperiores nam corrupti maiores laborum velit molestias
+                    consectetur quidem, deserunt voluptatum. Voluptatibus?
+                    Praesentium quas fuga assumenda ducimus illum quasi maxime, et debitis dignissimos pariatur corporis
+                    numquam totam soluta consequatur amet in sint accusamus deserunt neque. Earum sed vitae modi, fuga
+                    in ipsum!
+                    Quo impedit sapiente qui excepturi odit molestiae laudantium, porro quas error reprehenderit
+                    voluptates consequatur natus quibusdam veniam! Soluta facere cupiditate labore, iure eius minima
+                    possimus perspiciatis enim totam consectetur provident!
+                    Itaque ut corrupti ipsa maxime voluptate nihil placeat architecto corporis aliquam vitae adipisci
+                    reiciendis eius omnis harum, consectetur excepturi soluta a hic vel eaque dicta. Voluptate
+                    exercitationem pariatur expedita. Id.
+                    Possimus aperiam dignissimos dolorum nisi explicabo, ab molestiae placeat ad officia quibusdam
+                    cupiditate quis animi porro, dolor labore tenetur nemo nesciunt culpa blanditiis quaerat excepturi
+                    quisquam delectus magni facilis? Incidunt.
+                    Temporibus soluta dignissimos reiciendis explicabo corrupti, non, vero consequuntur velit labore
+                    dolorem debitis nulla sint dolor quia optio? Accusamus est architecto at sapiente veniam totam modi
+                    blanditiis cumque nesciunt quaerat.
+                    Saepe rerum laborum nulla delectus atque quaerat, architecto maiores excepturi sint cum. Libero
+                    labore ea repellat animi quasi nostrum excepturi facere officia dolore deleniti tempora veritatis
+                    nemo suscipit, distinctio reiciendis?
+                    Cupiditate, quod reiciendis. Exercitationem, dicta nostrum. Hic facilis laboriosam nostrum nam
+                    soluta, illum ad odio voluptas deserunt exercitationem consequuntur accusantium culpa recusandae
+                    quod, debitis numquam quibusdam id optio cum ratione!
+                    Consectetur harum vero pariatur ipsa animi odit laborum fugiat explicabo exercitationem reiciendis
+                    tenetur libero perspiciatis, neque alias sint iure! Consectetur quaerat hic itaque, praesentium aut
+                    cupiditate ab aspernatur. Ex, molestias.
+                </p>
+            </section>
+            <section id="section3">
+                <h2>Heading 3</h2>
+                <p>This is the content for Heading 3.</p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem consequuntur sapiente nisi accusamus?
+                    Minima, dolor? Nobis iusto voluptatem beatae, eaque molestias, esse facilis soluta laboriosam a
+                    ratione molestiae placeat. Animi.
+                    Voluptatibus rem aliquid reprehenderit quaerat quia delectus dolorem necessitatibus! Quas,
+                    accusantium eos. Ea sit deserunt debitis laborum eius, doloremque aperiam magni beatae ratione
+                    repellendus reiciendis sint vel velit nostrum repellat?
+                    Maxime quod cum perspiciatis exercitationem fugiat sed delectus mollitia deleniti possimus? Commodi
+                    repudiandae enim, magni vel id ea nulla laudantium facilis reprehenderit perspiciatis saepe quis!
+                    Nulla necessitatibus consectetur autem illo!
+                    Ex iste ducimus veritatis totam laborum explicabo enim a ipsam mollitia nesciunt recusandae
+                    blanditiis, voluptas deserunt facilis id fuga, vero rem fugiat laboriosam sunt quasi accusantium
+                    perspiciatis? Modi, harum animi.
+                    Ratione totam optio ut voluptatem eaque quasi. Consequuntur vitae corrupti et dolore quaerat quam
+                    cum fugiat deleniti aspernatur minima dolorum modi tempore, illo in hic impedit! Excepturi omnis
+                    pariatur suscipit.
+                    Adipisci nemo incidunt nostrum, ut minus ad, deleniti voluptate vitae doloremque laborum, aperiam
+                    voluptatibus ullam quia laboriosam quaerat! Quos dicta totam earum pariatur quae excepturi tempora
+                    quas voluptate sequi saepe?
+                    Sint quae, impedit sapiente tenetur aliquam nobis, labore omnis asperiores explicabo quisquam
+                    veritatis distinctio cupiditate perspiciatis numquam aspernatur! Odio quo quia commodi eligendi
+                    maiores officiis quis voluptas nostrum, voluptate adipisci.
+                    Nam quibusdam quis quas quasi distinctio aut explicabo, delectus quos repudiandae. Harum rem et
+                    vitae necessitatibus inventore. Similique nemo ea officiis, est placeat nostrum suscipit sequi
+                    eligendi neque obcaecati illo!
+                    Provident sed cum dolores perspiciatis earum magni, repellendus eaque, neque dicta necessitatibus
+                    unde nisi illum ab, labore perferendis! Ex necessitatibus eos voluptates itaque tempora quo vitae et
+                    ducimus incidunt quas!
+                    Vel illo tenetur et voluptates cumque officiis. Totam reiciendis nihil laboriosam aspernatur facilis
+                    repudiandae ipsa commodi magni ducimus est? Labore ipsa repudiandae minima, facere nostrum inventore
+                    ab velit aspernatur vel.
+                    Exercitationem harum accusantium nobis odit! Labore fugit est saepe iusto veniam neque, dignissimos
+                    obcaecati tempore tempora quam, quas vel praesentium asperiores ratione adipisci quibusdam ducimus
+                    porro accusantium velit voluptatum fuga.
+                    Quae assumenda laudantium explicabo nisi eaque distinctio saepe esse molestiae cupiditate tempore
+                    totam repellendus minima ducimus hic tempora asperiores nam corrupti maiores laborum velit molestias
+                    consectetur quidem, deserunt voluptatum. Voluptatibus?
+                    Praesentium quas fuga assumenda ducimus illum quasi maxime, et debitis dignissimos pariatur corporis
+                    numquam totam soluta consequatur amet in sint accusamus deserunt neque. Earum sed vitae modi, fuga
+                    in ipsum!
+                    Quo impedit sapiente qui excepturi odit molestiae laudantium, porro quas error reprehenderit
+                    voluptates consequatur natus quibusdam veniam! Soluta facere cupiditate labore, iure eius minima
+                    possimus perspiciatis enim totam consectetur provident!
+                    Itaque ut corrupti ipsa maxime voluptate nihil placeat architecto corporis aliquam vitae adipisci
+                    reiciendis eius omnis harum, consectetur excepturi soluta a hic vel eaque dicta. Voluptate
+                    exercitationem pariatur expedita. Id.
+                    Possimus aperiam dignissimos dolorum nisi explicabo, ab molestiae placeat ad officia quibusdam
+                    cupiditate quis animi porro, dolor labore tenetur nemo nesciunt culpa blanditiis quaerat excepturi
+                    quisquam delectus magni facilis? Incidunt.
+                    Temporibus soluta dignissimos reiciendis explicabo corrupti, non, vero consequuntur velit labore
+                    dolorem debitis nulla sint dolor quia optio? Accusamus est architecto at sapiente veniam totam modi
+                    blanditiis cumque nesciunt quaerat.
+                    Saepe rerum laborum nulla delectus atque quaerat, architecto maiores excepturi sint cum. Libero
+                    labore ea repellat animi quasi nostrum excepturi facere officia dolore deleniti tempora veritatis
+                    nemo suscipit, distinctio reiciendis?
+                    Cupiditate, quod reiciendis. Exercitationem, dicta nostrum. Hic facilis laboriosam nostrum nam
+                    soluta, illum ad odio voluptas deserunt exercitationem consequuntur accusantium culpa recusandae
+                    quod, debitis numquam quibusdam id optio cum ratione!
+                    Consectetur harum vero pariatur ipsa animi odit laborum fugiat explicabo exercitationem reiciendis
+                    tenetur libero perspiciatis, neque alias sint iure! Consectetur quaerat hic itaque, praesentium aut
+                    cupiditate ab aspernatur. Ex, molestias.
+                </p>
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>
